@@ -1,4 +1,4 @@
-const CACHE = 'vilos-cuts-v1';
+const CACHE = 'vilos-cuts-v2';
 const ASSETS = ['./','./index.html','./dashboard-vilos.html','./manifest.webmanifest','./cloud-config.js','./logo-vilos.png','./icon-192.png','./icon-512.png','./apple-touch-icon.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
@@ -16,3 +16,5 @@ self.addEventListener('fetch', event => {
     }).catch(() => caches.match('./index.html'));
   }));
 });
+
+
